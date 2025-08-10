@@ -1492,6 +1492,17 @@ a {
     right: -61px;
   }
 }
+@media (max-width: 767px) {
+  .main__form .form__item-tip .tip__text, .legal__form .form__item-tip .tip__text{
+    left: auto;
+    right: -6px;
+    max-width: 189px;
+  }
+  .main__form .form__item-tip .tip__text:before, .legal__form .form__item-tip .tip__text:before{
+    left: auto;
+    right: 9px;
+  }
+}
 
 .form__item-phone-wrap{
   display: flex;
