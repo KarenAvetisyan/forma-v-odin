@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>title</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Put your description here.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body> 
+
+    <section class="sc-tariffs" id="tariffs_id">
+        <div class="container">
+            <h2 class="sc-tariffs__title">Тарифы</h2>
+            <div class="tariffs__wrap">
+                <div class="_tariff _black">
+                    <span class="tariff__stock">-40%</span>
+                    <div class="tariff__head">
+                        <div class="tariff__title"><strong>Базовый</strong></div>
+                        <ul class="tariff__tags">
+                            <li><img src="tariff-images/start-icon.svg" alt="icon">Моментальный старт</li>
+                        </ul>
+                    </div>
+                    <div class="tariff__price"><strong>от <span class="price">1 478 ₽/мес</span></strong> <del>2 100 ₽</del></div>
+                    <div class="tariff__installment">При рассрочке 0% на 12 месяцев <strong>или сразу за 16 999 ₽</strong></div>
+
+                    <div class="tariff__plate"><img loading="lazy" src="form-images/payment-icons/parts-icon.svg" alt="долям"> 4 платежа по 3 975 ₽</div>
+
+                    <a href="#" class="tariff__btn">Перейти к оплате</a>
+                    <ul class="tariff__items-list">
+                        <li>Самостоятельное обучение с доступом в закрытый чат студентов </li>
+                        <li>Доступ к курсу на 2 года</li>
+                        <li>Бесплатный перевод между курсами</li>
+                        <li>Кураторская помощь с организационными вопросами и учебной платформой</li>
+                        <li>Сертификат Академии</li>
+                    </ul>
+                </div>
+                <div class="_tariff _blue">
+                    <span class="tariff__stock">-10%</span>
+                    <div class="tariff__head">
+                        <div class="tariff__title"><strong>С наставником</strong></div>
+                        <ul class="tariff__tags">
+                            <li><img src="tariff-images/start-icon.svg" alt="icon">Моментальный старт</li>
+                        </ul>
+                    </div>
+                    <div class="tariff__price"><strong>от <span class="price">от 2 776 ₽/мес</span></strong> <del>3 084 ₽</del></div>
+                    <div class="tariff__installment">При рассрочке 0% на 12 месяцев <strong>или сразу за 33 310 ₽</strong></div>
+
+                    <div class="tariff__plate"><img loading="lazy" src="form-images/payment-icons/parts-icon.svg" alt="долям"> 4 платежа по 3 975 ₽</div>
+                    
+                    <a href="#" class="tariff__btn">Перейти к оплате</a>
+                    <ul class="tariff__items-list">
+                        <li>Все опции тарифа «Базовый»</li>
+                        <li>Личный наставник без ограничений по ответам на 5 месяцев</li>
+                        <li>Неограниченный доступ к материалам курса</li>
+                        <li>Бонус: Интенсив по развитию карьеры от ЭЙЧ</li>
+                        <li>Групповые карьерные консультации</li>
+                        <li>Бонус: Мини-курс по английскому языку для IТ от Advance</li>
+                        <li>Удостоверение о повышении квалификации</li>
+                    </ul>
+                </div>
+              
+            </div>
+            <!-- Юридическим лицам   -->
+            <div class="legal__entities-wrap dropdown-item">
+                <div class="legal__entities-toggle drop-head">
+                    <div class="legal__entities-title">Юридическим лицам</div>
+                </div>
+                <div class="legal__entities-content panel">
+                    <div class="legal__entities-content-wrap">
+                        <div class="legal__entities-form">
+                            <div class="legal__entities-content-title">
+                                <h2>Изучим ваш кейс<br> и сделаем предложение</h2>
+                                <p>Проконсультируем, расскажем о себе и подумаем вместе, как принести пользу вашему бизнесу</p>
+                            </div>
+                            <div class="legal__entities-form-wrap">
+                                <form method="POST" id="legal-form">
+                                    <div class="legal__form">
+                                        <div class="form__item-wrap">
+                                            <div class="form__item w-50">
+                                                <input type="text" name="name" placeholder="Имя" class="form__input">
+                                            </div>
+                                            <div class="form__item w-50">
+                                                <input type="text" name="company" placeholder="Название компании" class="form__input">
+                                            </div>
+                                            <div class="form__item w-50">
+                                                <div class="form__item-phone-wrap">
+                                                    <div class="form__flag-select">
+                                                        <div class="select">
+                                                            <div class="flag__icon">
+                                                                <img class="flag__img" src="form-images/flags/ru.svg" alt="flag">
+                                                            </div>
+                                                            <input type="text" class="flag__code" value="" readonly>
+                                                        </div>
+                                                        <div class="option-container">
+                                                            <div class="search__box">
+                                                                <input type="search" placeholder="Поиск по коду или названию" class="search">
+                                                                <i class="icon icon-search"></i>
+                                                                <i class="icon icon-search-close" style="display: none;"></i>
+                                                            </div>
+                                                            <div class="option-container-wrap">
+                                                                <div class="option selected" data-code="+7" data-mask="999 999-99-99">
+                                                                    <div class="flag__and__code">
+                                                                        <img src="form-images/flags/ru.svg" class="flag" alt="flag"> 
+                                                                    </div>
+                                                                    Российская Федерация
+                                                                    <span>+7</span>
+                                                                </div>
+                                                                <div class="option" data-code="+7" data-mask="999 999-99-99">
+                                                                    <div class="flag__and__code">
+                                                                        <img src="form-images/flags/kz.svg" class="flag" alt="flag"> 
+                                                                    </div>
+                                                                    Казахстан
+                                                                    <span>+7</span>
+                                                                </div>
+                                                                <div class="option" data-code="+375" data-mask="99 999-99-99">
+                                                                    <div class="flag__and__code">
+                                                                        <img src="form-images/flags/be.svg" class="flag" alt="flag"> 
+                                                                    </div>
+                                                                    Белоруссия
+                                                                    <span>+375</span>
+                                                                </div>
+                                                                <div class="option" data-code="+996" data-mask="99 999-99-99">
+                                                                    <div class="flag__and__code">
+                                                                        <img src="form-images/flags/kg.svg" class="flag" alt="flag"> 
+                                                                    </div>
+                                                                    Кыргызстан
+                                                                    <span>+996</span>
+                                                                </div>
+                                                                <div class="option" data-code="+998" data-mask="99 999-99-99">
+                                                                    <div class="flag__and__code">
+                                                                        <img src="form-images/flags/uz.svg" class="flag" alt="flag"> 
+                                                                    </div>
+                                                                    Узбекистан
+                                                                    <span>+998</span>
+                                                                </div>
+                                                                <div class="option" data-code="+504" data-mask="9999-9999">
+                                                                    <div class="flag__and__code">
+                                                                        <img src="form-images/flags/hd.svg" class="flag" alt="flag"> 
+                                                                    </div>
+                                                                    Гондурас
+                                                                    <span>+504</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="option-container__overlay"></div>
+                                                    </div>
+                                                    <div class="form__item-inner">
+                                                        <input type="tel" name="phone" placeholder="Телефон" class="form__input _phone phone-mask _req form__item--phone">
+                                                    </div>
+                                                </div>
+                                                <div class="req__text">Обязательное поле</div>
+                                                <div class="error__text">Пожалуйста, укажи корректный номер</div>
+                                                <div class="form__item-tip">
+                                                    <div class="tip__icon"><img src="form-images/icons/tip-icon.svg" alt="?"></div>
+                                                    <div class="tip__text">Для связи, например, для восстановления доступа</div>
+                                                </div>
+                                            </div>
+                                            <div class="form__item w-50">
+                                                <input type="text" name="email" placeholder="E-mail*" class="form__input _req _email">
+                                                <div class="req__text">Обязательное поле</div>
+                                                <div class="error__text">Пожалуйста, укажи корректный e-mail</div>
+                                            </div>
+                                            
+                                            <div class="form__item">
+                                                <textarea name="message" placeholder="Ваше сообщение" class="textarea__field autoResizeTextarea"></textarea>
+                                            </div>
+                                            <div class="form__item">
+                                                <div class="submit__wrap">
+                                                    <button type="submit" class="submit prm-btn">Отправить</button>
+                                                    <p>Нажимая на кнопку, вы соглашаетесь на<br> <a href="#">обработку персональных данных</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form> 
+                                <!-- Добавляется класс show при успешном отправке или при ошибке -->
+                                <div class="legal__entities-form-success" id="legal-form-success">
+                                    <h3>Спасибо, ваше заявление получено!</h3>
+                                    <p>Мы свяжемся с вами в&nbsp;ближайшее время</p>
+                                    <div class="img__box"><img loading="lazy" src="form-images/success-img.svg" alt="img"></div>
+                                </div>
+                                <div class="legal__entities-form-fail" id="legal-form-fail">
+                                    <h3>Ой, что-то пошло не так <img width="40" height="41" class="emoji" loading="lazy" src="form-images/emoji.png" alt="emoji"></h3>
+                                    <p>Пожалуйста, свяжитесь с нами в Telegram:<br>
+                                        <a href="https://t.me/merion_academy_bot" target="_blank">@merion_academy_bot</a><br>
+                                        или напишите на почту <a href="mailto:info@merionet.ru">info@merionet.ru</a></p>
+                                    <div class="img__box"><img loading="lazy" src="form-images/success-img.svg" alt="img"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="legal__entities-info">
+                            <div class="info__box">
+                                <p>Ищете эффективное IT-обучение для команды? Узнайте, как мы сотрудничаем с юридическими лицами.</p>
+                                <a href="#" class="info__link">Подробнее о сотрудничестве</a>
+                            </div>
+                            <div class="social__box">
+                                <div class="single__social">
+                                    <p>Telegram-бот</p>
+                                    <p><a href="https://t.me/merion_academy_bot" class="copy-link" data-tooltip="Копировать" id="telegram-link">@merion_academy_bot</a></p>
+                                </div>
+                                <div class="single__social">
+                                    <p>Контактный центр</p>
+                                    <p><a href="tel:88005114974" class="copy-link" data-tooltip="Копировать">8 (800) 511 49-74</a></p>
+                                </div>
+                                <div class="single__social">
+                                    <p>Почта</p>
+                                    <p><a href="mailto:info@merionet.ru" class="copy-link" data-tooltip="Копировать">info@merionet.ru</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sc-form-payments">
+        <div class="container">
+            <div class="form__wrapper">
+                <div class="form__payment">
+                    <div class="form__head-wrap"><!-- FORM HEAD  -->
+                        <a href="#tariffs_id" class="to__tariffs show-max-1024">К тарифам</a>
+                        <div class="form__head">
+                            <div class="form__head-title-wrap">
+                                <div class="form__head-title">DevOps-инженер с&nbsp;нуля</div>
+                                <div class="form__head-rating">
+                                    <span>5.0 <img src="form-images/icons/rating-icon.svg" alt="star"></span>
+                                    <div>рейтинг курсов<br> в&nbsp;<a href="#">Яндекс</a></div>
+                                </div>
+                            </div>
+                            <div class="form__head-left">
+                                <div class="tariff__chosen-details">
+                                    <div class="tariff__chosen-text">Ты выбрал тариф</div>
+                                        <!-- дропдаун тарифа  -->
+                                        <div class="tariff__chosen-select" onclick="this.classList.toggle('open')">
+                                            <div class="tariff__chosen-trigger" id="tariffSelected">С наставником</div>
+                                            <ul class="tariff__chosen-options" id="tariffOptions">
+                                                <li onclick="swapTariff(this, event)">Базовый</li>
+                                                <li onclick="swapTariff(this, event)">В потоке</li>
+                                            </ul>
+                                        </div>
+                                        <!-- скрипт для дропдауна -->
+                                        <script>
+                                             function swapTariff(el, e) {
+                                                    e.stopPropagation();
+                                                    const trigger = document.getElementById('tariffSelected');
+                                                    const options = document.getElementById('tariffOptions');
+                                                    const current = trigger.innerText;
+                                                    trigger.innerText = el.innerText;
+                                                    el.innerText = current;
+                                                    el.closest('.tariff__chosen-select').classList.remove('open');
+                                                }
+                                                document.addEventListener('click', e => {
+                                                    if (!e.target.closest('.tariff__chosen-select')) {
+                                                    document.querySelector('.tariff__chosen-select')?.classList.remove('open');
+                                                    }
+                                                });
+                                        </script>
+                                </div>
+
+                                <div class="tariff__chosen-payment-details">
+                                    <div class="tariff__chosen-price">от 2 776 ₽/мес <span>-10%</span></div>
+                                    <div class="tariff__chosen-installment-info">При рассрочке 0% на 12 месяцев <span>или сразу за 33 310 ₽</span></div>
+                                </div>
+
+                            </div>
+                            <div class="form__head-right">
+                                <ul class="tariff__chosen-item-list">
+                                        <li>Личный наставник</li>
+                                        <li>Неограниченный доступ к материалам курса</li>
+                                        <li>Интенсив по развитию карьеры от ЭЙЧ и курс по английскому для IT-специалистов в подарок</li>
+                                        <li>Сертификат + удостоверение о повышении квалификации</li>
+                                        <li>Бесплатный перевод между курсами</li>
+                                </ul>
+                                <div class="show-max-1024">
+                                   <a href="#" class="tariff__chosen-item-list-toggle">Подробнее о тарифе<i class="icon-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__body-wrap"><!-- FORM BODY  -->
+                        <form method="POST" id="main-form">
+                            <div class="form__body-title">Кто будет учиться</div>
+                            <div class="main__form">
+                                <div class="form__item-wrap">
+                                    <div class="form__item w-33">
+                                        <input type="text" name="name" placeholder="Имя" class="form__input _req">
+                                        <div class="req__text">Обязательное поле</div>
+                                        <div class="form__item-tip">
+                                            <div class="tip__icon"><img src="form-images/icons/tip-icon.svg" alt="?"></div>
+                                            <div class="tip__text">Для сертификата. Можно будет
+                                                поменять в личном кабинете</div>
+                                        </div>
+                                    </div>
+                                    <div class="form__item w-33">
+                                        <input type="text" name="email" placeholder="Электронная почта" class="form__input _req _email">
+                                        <div class="req__text">Обязательное поле</div>
+                                        <div class="error__text">Пожалуйста, укажи корректный e-mail</div>
+                                        <div class="form__item-tip">
+                                            <div class="tip__icon"><img src="form-images/icons/tip-icon.svg" alt="?"></div>
+                                            <div class="tip__text">Сюда после оплаты вышлем логин и пароль для входа в личный кабинет</div>
+                                        </div>
+                                    </div>
+                                    <div class="form__item w-33">
+                                        <div class="form__item-phone-wrap">
+                                            <div class="form__flag-select">
+                                                <div class="select">
+                                                    <div class="flag__icon">
+                                                        <img class="flag__img" src="form-images/flags/ru.svg" alt="flag">
+                                                    </div>
+                                                    <input type="text" class="flag__code" value="" readonly>
+                                                </div>
+                                                <div class="option-container">
+                                                    <div class="search__box">
+                                                        <input type="search" placeholder="Поиск по коду или названию" class="search">
+                                                        <i class="icon icon-search"></i>
+                                                        <i class="icon icon-search-close" style="display: none;"></i>
+                                                    </div>
+                                                    <div class="option-container-wrap">
+                                                        <div class="option selected" data-code="+7" data-mask="999 999-99-99">
+                                                            <div class="flag__and__code">
+                                                                <img src="form-images/flags/ru.svg" class="flag" alt="flag"> 
+                                                            </div>
+                                                            Российская Федерация
+                                                            <span>+7</span>
+                                                        </div>
+                                                        <div class="option" data-code="+7" data-mask="999 999-99-99">
+                                                            <div class="flag__and__code">
+                                                                <img src="form-images/flags/kz.svg" class="flag" alt="flag"> 
+                                                            </div>
+                                                            Казахстан
+                                                            <span>+7</span>
+                                                        </div>
+                                                        <div class="option" data-code="+375" data-mask="99 999-99-99">
+                                                            <div class="flag__and__code">
+                                                                <img src="form-images/flags/be.svg" class="flag" alt="flag"> 
+                                                            </div>
+                                                            Белоруссия
+                                                            <span>+375</span>
+                                                        </div>
+                                                        <div class="option" data-code="+996" data-mask="99 999-99-99">
+                                                            <div class="flag__and__code">
+                                                                <img src="form-images/flags/kg.svg" class="flag" alt="flag"> 
+                                                            </div>
+                                                            Кыргызстан
+                                                            <span>+996</span>
+                                                        </div>
+                                                        <div class="option" data-code="+998" data-mask="99 999-99-99">
+                                                            <div class="flag__and__code">
+                                                                <img src="form-images/flags/uz.svg" class="flag" alt="flag"> 
+                                                            </div>
+                                                            Узбекистан
+                                                            <span>+998</span>
+                                                        </div>
+                                                        <div class="option" data-code="+504" data-mask="9999-9999">
+                                                            <div class="flag__and__code">
+                                                                <img src="form-images/flags/hd.svg" class="flag" alt="flag"> 
+                                                            </div>
+                                                            Гондурас
+                                                            <span>+504</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="option-container__overlay"></div>
+                                            </div>
+                                            <div class="form__item-inner">
+                                                <input type="tel" name="phone" placeholder="Телефон" class="form__input _phone phone-mask _req form__item--phone">
+                                            </div>
+                                        </div>
+                                        <div class="req__text">Обязательное поле</div>
+                                        <div class="error__text">Пожалуйста, укажи корректный номер</div>
+                                        <div class="form__item-tip">
+                                            <div class="tip__icon"><img src="form-images/icons/tip-icon.svg" alt="?"></div>
+                                            <div class="tip__text">Для связи, например, для восстановления доступа</div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="form__body-title">Способ оплаты</div>
+
+                            <div class="payment__variant-form">
+
+                                <div class="payment__variants-wrap"><!-- Варианты -->
+                                    <div class="payment__variants-col">
+                                        <div class="payment__variant active" data-content="_entire">
+                                            <div class="payment__variant-title">Вся сумма целиком</div>
+                                            <div class="payment__variant-box">
+                                                <label class="payment__variant-label">
+                                                    <input type="radio" class="radio__input-variant" name="payment" data-variant-content="entire-details" checked>
+                                                    <span class="payment__variant-holder">Карта РФ</span>
+                                                    <span class="payment__variant-icons icons-variant-1">
+                                                        <i class="icon"><img loading="lazy" src="form-images/payment-icons/sbp-icon.svg" alt="сбп"></i>
+                                                        <i class="icon"><img loading="lazy" src="form-images/payment-icons/visa-icon.svg" alt="visa"></i>
+                                                        <i class="icon"><img loading="lazy" src="form-images/payment-icons/mastercard-icon.svg" alt="mastercard"></i>
+                                                        <i class="icon"><img loading="lazy" src="form-images/payment-icons/mir-icon.svg" alt="мир"></i>
+                                                        <i class="icon"><img loading="lazy" src="form-images/payment-icons/tinkoff-icon.svg" alt="тинькофф"></i>
+                                                        <i class="icon"><img loading="lazy" src="form-images/payment-icons/sberpay-icon.svg" alt="SberPay"></i>
+                                                    </span>
+                                                </label>
+                                                <label class="payment__variant-label">
+                                                    <input type="radio" class="radio__input-variant" data-variant-content="entire-details" name="payment">
+                                                    <span class="payment__variant-holder">Карта другой страны</span>
+                                                    <span class="payment__variant-icons icons-variant-1">
+                                                        <i class="icon"><img loading="lazy" src="form-images/payment-icons/visa-icon.svg" alt="visa"></i>
+                                                        <i class="icon"><img loading="lazy" src="form-images/payment-icons/mastercard-icon.svg" alt="mastercard"></i>
+                                                        <i class="icon"><img loading="lazy" src="form-images/payment-icons/am-express-icon.svg" alt="AmericanExpress"></i>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="payment__variant" data-content="_parts">
+                                            <div class="payment__variant-title">По частям</div>
+                                            <div class="payment__variant-box">
+                                                <label class="payment__variant-label">
+                                                    <input type="radio" class="radio__input-variant" name="payment" data-variant-content="parts-details">
+                                                    <span class="payment__variant-holder">Долями</span>
+                                                    <span class="payment__variant-icons">
+                                                        <i class="icon"><img loading="lazy" src="form-images/payment-icons/parts-icon.svg" alt="долям"></i>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="payment__variant" data-content="_wallets">
+                                            <div class="payment__variant-title">Электронные кошельки</div>
+                                            <div class="payment__variant-box">
+                                                <label class="payment__variant-label">
+                                                    <input type="radio" class="radio__input-variant" name="payment" data-variant-content="wallets-details">
+                                                    <span class="payment__variant-holder">ЮMoney</span>
+                                                    <span class="payment__variant-icons">
+                                                        <i class="icon"><img loading="lazy" src="form-images/payment-icons/yoomoney-icon.svg" alt="yoomoney"></i>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="payment__variants-col">
+                                        <div class="payment__variant" data-content="_installments">
+                                            <div class="payment__variant-title">В рассрочку без переплат</div>
+                                            <div class="payment__variant-box">
+                                                <label class="payment__variant-label">
+                                                    <input type="radio" class="radio__input-variant" name="payment" data-variant-content="installments-details">
+                                                    <span class="payment__variant-holder">T-банк</span>
+                                                    <span class="payment__variant-icons">
+                                                        <i class="icon"><img loading="lazy" src="form-images/payment-icons/tinkoff-icon-2.svg" alt="тинькофф"></i>
+                                                    </span>
+                                                </label>
+                                                <label class="payment__variant-label">
+                                                    <input type="radio" class="radio__input-variant" name="payment" data-variant-content="installments-details">
+                                                    <span class="payment__variant-holder">Сбербанк</span>
+                                                    <span class="payment__variant-icons">
+                                                        <i class="icon"><img loading="lazy" src="form-images/payment-icons/sberbank-icon.svg" alt="Сбербанк"></i>
+                                                    </span>
+                                                </label>
+                                                <label class="payment__variant-label">
+                                                    <input type="radio" class="radio__input-variant" name="payment" data-variant-content="installments-sng-details">
+                                                    <span class="payment__variant-holder">Для жителей СНГ</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="payment__variant" data-content="_legal">
+                                            <div class="payment__variant-title">От юридического лица</div>
+                                            <div class="payment__variant-box">
+                                                <label class="payment__variant-label">
+                                                    <input type="radio" class="radio__input-variant" name="payment" data-variant-content="legal-details">
+                                                    <span class="payment__variant-holder">Оплата через работодателя</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Детали по каждому варианту оплаты -->
+                                <div class="payment__details">
+                                    <!-- Вся сумма целиком  -->
+                                    <div class="payment__content" id="_entire">
+                                        <div class="payment__variant-content" id="entire-details">
+                                            <div class="payment__price-title">К оплате:</div>
+                                            <div class="payment__price-total type__1">
+                                                <div class="price">16 490 <span class="currency"> ₽</span></div>
+                                                <div class="price__old">21.990 ₽</div>
+                                            </div>
+                                            <div class="payment__stock-info">Цена со скидкой 20%<br> Акция действует до 30 октября</div>
+                                            
+                                            <div class="promocode">
+                                                <input type="text" class="promocode__input" placeholder="Промокод">
+                                                <button type="button" class="promocode__btn">Применить</button>
+                                            </div>
+                                            
+                                            <button type="submit" class="submit prm-btn">Оплатить 16 490 ₽ <i class="icon icon-arrow"></i></button>
+                                            <p class="agree">Нажимая на кнопку, ты соглашаешься на <a href="#">обработку персональных данных</a> и принимаешь <a href="#">оферту</a> </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- По частям  -->
+                                    <div class="payment__content" id="_parts">
+                                        <div class="payment__variant-content" id="parts-details" style="display: none;">
+                                            <div class="payment__price-title">К оплате:</div>
+                                            <div class="payment__price-total type__1">
+                                                <div class="price">16 490 <span class="currency"> ₽</span></div>
+                                                <div class="price__old">21.990 ₽</div>
+                                            </div>
+                                            <div class="payment__stock-info">Цена со скидкой 20%<br> Акция действует до 30 октября</div>
+                                            <div class="content__text small">
+                                                Раздели сумму покупки на 4 платежа. Сначала платишь только часть, остальные списываются каждые 2 недели.
+                                                <br><a href="#">Подробнее</a>
+                                            </div>
+                                            <div class="parts__graphic">
+                                                <div class="part__wrap">
+                                                    <div class="part active">
+                                                        <div class="part__info">
+                                                            <div class="part__info-date">Сегодня</div>
+                                                            <div class="part__info-price">2 040 ₽</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="part">
+                                                        <div class="part__info">
+                                                            <div class="part__info-date">24 дек</div>
+                                                            <div class="part__info-price">2 040 ₽</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="part">
+                                                        <div class="part__info">
+                                                            <div class="part__info-date">7 янв</div>
+                                                            <div class="part__info-price">2 040 ₽</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="part">
+                                                        <div class="part__info">
+                                                            <div class="part__info-date">21 янв</div>
+                                                            <div class="part__info-price">2 040 ₽</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span class="graphic__info">Примерный график, может быть сервисный сбор</span>
+                                            </div>
+                                            <div class="promocode">
+                                                <input type="text" class="promocode__input" placeholder="Промокод">
+                                                <button type="button" class="promocode__btn">Применить</button>
+                                            </div>
+                                            <button type="submit" class="submit prm-btn">Рассчитать платёж <i class="icon icon-arrow"></i></button>
+                                            <p class="agree">Нажимая на кнопку, ты соглашаешься на <a href="#">обработку персональных данных</a> и принимаешь <a href="#">оферту</a> </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Электронные кошельки -->
+                                    <div class="payment__content" id="_wallets">
+                                        <div class="payment__variant-content" id="wallets-details">
+                                            <div class="payment__price-title">К оплате:</div>
+                                            <div class="payment__price-total type__1">
+                                                <div class="price">16 490 <span class="currency"> ₽</span></div>
+                                                <div class="price__old">21.990 ₽</div>
+                                            </div>
+                                            <div class="payment__stock-info">Цена со скидкой 20%<br> Акция действует до 30 октября</div>
+                                            
+                                            <div class="promocode">
+                                                <input type="text" class="promocode__input" placeholder="Промокод">
+                                                <button type="button" class="promocode__btn">Применить</button>
+                                            </div>
+                                            
+                                            <button type="submit" class="submit prm-btn">Оплатить 16 490 ₽ <i class="icon icon-arrow"></i></button>
+                                            <p class="agree">Нажимая на кнопку, ты соглашаешься на <a href="#">обработку персональных данных</a> и принимаешь <a href="#">оферту</a> </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- В рассрочку без переплат  -->
+                                    <div class="payment__content" id="_installments">
+                                        <div class="payment__variant-content" id="installments-details" style="display: none;">
+                                            <div class="payment__price-title">К оплате:</div>
+                                            <div class="payment__price-total type__2">
+                                                <div class="price__monthly">2 748 <span class="currency"> ₽</span></div>
+                                                <div class="price__monthly-text">в месяц </div>
+                                            </div>
+                                            <div class="payment__price-total-small">
+                                                <div class="price__total">Всего 16 490 ₽</div><span class="price__old">21 990 ₽</span>
+                                            </div>
+                                            <div class="payment__stock-info">Цена со скидкой 20%<br> Акция действует до 30 октября</div>
+                                            <div class="content__title">Рассрочка на:</div>
+                                            <div class="installments__wrap">
+                                                <div class="installments__labels">
+                                                    <label class="installment__label">
+                                                    <input type="radio" name="installment-month" value="6 мес" checked>
+                                                    <span class="label__holder">6 мес</span>
+                                                    </label>
+                                                    <label class="installment__label">
+                                                    <input type="radio" name="installment-month" value="12 мес">
+                                                    <span class="label__holder">12 мес</span>
+                                                    </label>
+                                                    <label class="installment__label">
+                                                    <input type="radio" name="installment-month" value="24 мес">
+                                                    <span class="label__holder">24 мес</span>
+                                                    </label>
+                                                </div>
+                                                <div class="slider"></div> <!-- для корректного отображения слайдера надо чтоб изначально только первая кнопка была активна в инпутах -->
+                                            </div>
+                                            <div class="content__text">
+                                                Рассрочка не включает дополнительные переплаты, т.к. проценты мы оплатим за тебя.<br>
+                                                <a class="conditions" href="#">Условия рассрочки <i class="icon icon-arrow"></i></a>
+                                                <div class="space"></div>
+                                            </div>
+                                            <div class="promocode">
+                                                <input type="text" class="promocode__input" placeholder="Промокод">
+                                                <button type="button" class="promocode__btn">Применить</button>
+                                            </div>
+                                            <button type="submit" class="submit prm-btn">Оформить заявку <i class="icon icon-arrow"></i></button>
+                                            <p class="agree">Нажимая на кнопку, ты соглашаешься на <a href="#">обработку персональных данных</a> и принимаешь <a href="#">оферту</a> </p>
+                                        </div>
+                                        <div class="payment__variant-content" id="installments-sng-details" style="display: none;"> 
+                                            <div class="payment__price-title">К оплате:</div>
+                                            <div class="payment__price-total type__2">
+                                                <div class="price__monthly">2 748 <span class="currency"> ₽</span></div>
+                                                <div class="price__monthly-text">в месяц </div>
+                                            </div>
+                                            <div class="payment__price-total-small">
+                                                <div class="price__total">Всего 16 490 ₽</div><span class="price__old">21 990 ₽</span>
+                                            </div>
+                                            <div class="payment__stock-info">Цена со скидкой 20%<br> Акция действует до 30 октября</div>
+                                            <div class="content__text">
+                                                Мы предоставляем беспроцентную рассрочку для жителей стран СНГ через партнера "Ресурс Развития"
+                                                <a class="conditions" href="#">Условия рассрочки <i class="icon icon-arrow"></i></a>
+                                                <div class="space"></div>
+                                            </div>
+                                            <div class="promocode">
+                                                <input type="text" class="promocode__input" placeholder="Промокод">
+                                                <button type="button" class="promocode__btn">Применить</button>
+                                            </div>
+                                            <button type="submit" class="submit prm-btn">Оформить заявку <i class="icon icon-arrow"></i></button>
+                                            <p class="agree">Нажимая на кнопку, ты соглашаешься на <a href="#">обработку персональных данных</a> и принимаешь <a href="#">оферту</a> </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- От юридического лица  -->
+                                    <div class="payment__content" id="_legal">
+                                        <div class="payment__variant-content" id="legal-details" style="display: none;">
+                                            <div class="content__text">
+                                                Наши специалисты по работе с корпоративными клиентами свяжутся с тобой для оформления договора и выставления счета.
+                                            </div>
+                                            <button type="submit" class="submit prm-btn">Отправить заявку <i class="icon icon-arrow"></i></button>
+                                            <p class="agree">Нажимая на кнопку, ты соглашаешься на <a href="#">обработку персональных данных</a> и принимаешь <a href="#">оферту</a> </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form> 
+                    </div>
+
+                    <div class="form__bottom-info">
+                        <div class="bonus__quest-wrap">
+                            <div class="bonus__stock">
+                                <p><span class="discount">-5%</span>получи дополнительную скидку<br>
+                                    <a href="#">за прохождение вводного урока</a></p>
+                            </div>
+                            <div class="quest__box">
+                                <h4>Остались вопросы?</h4>
+                                <p>Бесплатный звонок по России: 
+                                    <a href="tel:88005114974">8 (800) 511 49-74</a><br>
+                                    по будням с 10 до 19 по МСК</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.6/dist/inputmask.min.js"></script>
+    <script src="js/page-form-script.js"></script>
+    <script src="js/form-send.js"></script>
+</body>
+</html>
+
