@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
         const options = formPhone.querySelectorAll('.option');
         const defaultOption = formPhone.querySelector('.option.selected');
         const searchInput = formPhone.querySelector('.search');
+        const searchHolder = formPhone.querySelector('.form__flag-search-holder');
         const iconSearch = formPhone.querySelector('.icon-search');
         const iconSearchClose = formPhone.querySelector('.icon-search-close');
         const optionContainerWrap = formPhone.querySelector('.option-container-wrap');
@@ -56,6 +57,9 @@ document.addEventListener('DOMContentLoaded', function(){
         if (searchInput && iconSearch && iconSearchClose) {
             function toggleIcons() {
                 const isEmpty = !searchInput.value.trim();
+                if(searchHolder){
+                    searchHolder.style.display = isEmpty ? 'inline-block' : 'none';
+                }
                 iconSearch.style.display = isEmpty ? 'inline-block' : 'none';
                 iconSearchClose.style.display = isEmpty ? 'none' : 'inline-block';
             }
