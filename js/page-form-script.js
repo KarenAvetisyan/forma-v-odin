@@ -173,19 +173,25 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
     // TARRIFS Подробнее о тарифе / Свернуть
-    const toggleLink = document.querySelector('.tariff__chosen-item-list-toggle');
-    const list = document.querySelector('.tariff__chosen-item-list');
-    if (!toggleLink || !list) return;
-    toggleLink.addEventListener('click', function (e) {
-        e.preventDefault();
+    const toggleLinks = document.querySelectorAll('.js-tariff-toggle-choosenList');
+    toggleLinks.forEach(toggleLink => {
+        if (toggleLink) {
+            const originalText = toggleLink.innerHTML;
+            const toggledText = toggleLink.dataset.toggledText; 
 
-        list.classList.toggle('is-visible');
-        this.classList.toggle('is-active');
-
-        if (list.classList.contains('is-visible')) {
-            this.innerHTML = 'Свернуть <i class="icon-arrow"></i>';
-        } else {
-            this.innerHTML = 'Подробнее о тарифе <i class="icon-arrow"></i>';
+            toggleLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                const container = toggleLink.parentElement; 
+                const list = container.querySelector('.js-tariff-chosenList');
+                if (!list) return;
+                list.classList.toggle('is-visible');
+                toggleLink.classList.toggle('is-active');
+                if (list.classList.contains('is-visible')) {
+                    toggleLink.innerHTML = `${toggledText} <i class="icon-arrow"></i>`;
+                } else {
+                    toggleLink.innerHTML = originalText;
+                }
+            });
         }
     });
 
