@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(){
 
     // FLAGS SELECT
-    const formPhones = document.querySelectorAll('.form__item-phone-wrap');
+    const formPhones = document.querySelectorAll('.form__item-phone-wrap'); 
     formPhones.forEach(formPhone => {
         if (!formPhone) return;
 
@@ -16,48 +16,46 @@ document.addEventListener('DOMContentLoaded', function(){
         const iconSearchClose = formPhone.querySelector('.icon-search-close');
         const optionContainerWrap = formPhone.querySelector('.option-container-wrap');
         const phoneInput = formPhone.querySelector('.phone-mask');
-        const optionOverlay = formPhone.querySelector('.option-container__overlay'); // your overlay
+        const optionOverlay = formPhone.querySelector('.option-container__overlay');
 
-        // === New: Toggle _have-value based on any .form__input having value ===
+        // Track current selected
+        let currentSelected = defaultOption || null;
+
+        // === Toggle _have-value if any .form__input has value ===
         function checkInputsValue() {
             const inputs = formPhone.querySelectorAll('.form__input');
             const hasValue = Array.from(inputs).some(input => input.value.trim() !== '');
             formPhone.classList.toggle('_have-value', hasValue);
         }
-
-        // Run once on initialization
         checkInputsValue();
 
-        // Add input event listeners to all .form__input inside formPhone
         const inputs = formPhone.querySelectorAll('.form__input');
-        inputs.forEach(input => {
-            input.addEventListener('input', checkInputsValue);
-        });
-        // === End new ===
+        inputs.forEach(input => input.addEventListener('input', checkInputsValue));
 
         if (defaultOption) {
             updateSelection(defaultOption);
             applyPhoneMask(defaultOption.getAttribute('data-code'));
         }
 
-        // Toggle active class for both elements
+        // Open/close dropdown
         if (selectElement) {
             selectElement.addEventListener('click', () => {
                 const isActive = formPhone.classList.toggle('active');
-                optionOverlay?.classList.toggle('active', isActive);
+                if (optionOverlay) optionOverlay.classList.toggle('active', isActive);
             });
         }
 
-        // Clicking overlay closes everything
-        optionOverlay?.addEventListener('click', () => {
-            formPhone.classList.remove('active');
-            optionOverlay.classList.remove('active');
-        });
+        if (optionOverlay) {
+            optionOverlay.addEventListener('click', () => {
+                formPhone.classList.remove('active');
+                optionOverlay.classList.remove('active');
+            });
+        }
 
         if (searchInput && iconSearch && iconSearchClose) {
             function toggleIcons() {
                 const isEmpty = !searchInput.value.trim();
-                if(searchHolder){
+                if (searchHolder) {
                     searchHolder.style.display = isEmpty ? 'inline-block' : 'none';
                 }
                 iconSearch.style.display = isEmpty ? 'inline-block' : 'none';
@@ -78,27 +76,55 @@ document.addEventListener('DOMContentLoaded', function(){
             toggleIcons();
         }
 
+        // Hover + click logic
         options.forEach(option => {
-            option.addEventListener('click', () => {
-                updateSelection(option);
-                resetOptionsOrder();
-                formPhone.classList.remove('active');
-                optionOverlay?.classList.remove('active');
-                resetSearch();
-                resetOptionsVisibility();
-                resetPhoneInput();
-                applyPhoneMask(option.getAttribute('data-code'));
-            });
+        // Hover-like behavior for desktop
+        option.addEventListener('mouseenter', () => {
+            if (currentSelected && currentSelected !== option) {
+                currentSelected.classList.remove('selected');
+            }
+        });
+        option.addEventListener('mouseleave', () => {
+            if (currentSelected && !currentSelected.classList.contains('selected')) {
+                currentSelected.classList.add('selected');
+            }
         });
 
+        // Simulate hover for touch devices
+        option.addEventListener('touchstart', () => {
+            if (currentSelected && currentSelected !== option) {
+                currentSelected.classList.remove('selected');
+            }
+        });
+        option.addEventListener('touchend', () => {
+            if (currentSelected && !currentSelected.classList.contains('selected')) {
+                currentSelected.classList.add('selected');
+            }
+        });
+
+        // Click behavior
+        option.addEventListener('click', () => {
+            updateSelection(option);
+            currentSelected = option;
+            resetOptionsOrder();
+            formPhone.classList.remove('active');
+            if (optionOverlay) optionOverlay.classList.remove('active');
+            resetSearch();
+            resetOptionsVisibility();
+            resetPhoneInput();
+            applyPhoneMask(option.getAttribute('data-code'));
+        });
+    });
+
         document.addEventListener('click', (e) => {
-            if (!formPhone.contains(e.target) && e.target !== optionOverlay && formPhone.classList.contains('active')) {
+            if (!formPhone.contains(e.target) && formPhone.classList.contains('active')) {
                 formPhone.classList.remove('active');
-                optionOverlay?.classList.remove('active');
+                if (optionOverlay) optionOverlay.classList.remove('active');
             }
         });
 
         function adjustFlagCodeWidth(input) {
+            if (!input) return;
             const span = document.createElement('span');
             span.style.visibility = 'hidden';
             span.style.position = 'fixed';
@@ -111,21 +137,22 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         function updateSelection(option) {
-            selectFlagImage.setAttribute('src', option.querySelector('img.flag').src);
-            selectCodeInput.value = option.getAttribute('data-code');
+            const img = option.querySelector('img.flag');
+            if (selectFlagImage && img) selectFlagImage.setAttribute('src', img.src);
+            if (selectCodeInput) selectCodeInput.value = option.getAttribute('data-code') || '';
             adjustFlagCodeWidth(selectCodeInput);
             options.forEach(opt => opt.classList.remove('selected'));
             option.classList.add('selected');
         }
 
         function resetScrollPosition() {
-            optionContainerWrap.scrollTop = 0;
+            if (optionContainerWrap) optionContainerWrap.scrollTop = 0;
         }
 
         function filterOptions(query) {
             const filter = query.toUpperCase();
             options.forEach(option => {
-                const text = option.textContent || option.innerText;
+                const text = option.textContent || option.innerText || '';
                 if (text.toUpperCase().includes(filter)) {
                     option.style.order = '-1';
                     resetScrollPosition();
@@ -149,25 +176,20 @@ document.addEventListener('DOMContentLoaded', function(){
 
         function resetPhoneInput() {
             if (phoneInput) phoneInput.value = '';
-            // Also update the _have-value class if phone input is reset here
             checkInputsValue();
         }
 
         function applyPhoneMask(countryCode) {
-            if (phoneInput) {
-                const maskPattern = getPhoneMaskPattern(countryCode);
-                if (maskPattern) {
-                    Inputmask(maskPattern).mask(phoneInput);
-                }
+            if (!phoneInput) return;
+            const maskPattern = getPhoneMaskPattern(countryCode);
+            if (maskPattern) {
+                Inputmask(maskPattern).mask(phoneInput);
             }
         }
 
         function getPhoneMaskPattern(countryCode) {
             const countryElement = document.querySelector(`[data-code="${countryCode}"]`);
-            if (countryElement) {
-                return countryElement.getAttribute('data-mask') || '';
-            }
-            return '';
+            return countryElement ? (countryElement.getAttribute('data-mask') || '') : '';
         }
     });
 
